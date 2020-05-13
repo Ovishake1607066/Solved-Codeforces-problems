@@ -1,0 +1,59 @@
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+    int i,j,a,b,l,c1,c2,c3,l2;
+    char s[101],s1[100]={0},s2[100]={0},s3[100]={0},s4[101]={0};
+    scanf("%s",&s);
+    l=strlen(s);
+    c1=0;
+    c2=0;
+    c3=0;
+    for(i=0;i<l;i++)
+    {
+        if(s[i]=='1')
+        {
+            c1=c1+1;
+        }
+        else if(s[i]=='2')
+        {
+            c2=c2+1;
+        }
+        else if(s[i]=='3')
+        {
+            c3=c3+1;
+        }
+    }
+    if(c1>=1)
+    {
+        for(i=0,j=1;i<2*c1;i=i+2,j=j+2)
+        {
+            s1[i]='1';
+            s1[j]='+';
+        }
+    }
+    if(c2>=1)
+    {
+        for(i=0,j=1;i<2*c2;i=i+2,j=j+2)
+        {
+            s2[i]='2';
+            s2[j]='+';
+        }
+    }
+    if(c3>=1)
+    {
+        for(i=0,j=1;i<2*c3;i=i+2,j=j+2)
+        {
+            s3[i]='3';
+            s3[j]='+';
+        }
+    }
+    strcat(s1,s2);
+    strcat(s1,s3);
+    l2=strlen(s1);
+    for(i=0;i<l2-1;i++)
+    {
+        s4[i]=s1[i];
+    }
+    printf("%s\n",s4);
+}

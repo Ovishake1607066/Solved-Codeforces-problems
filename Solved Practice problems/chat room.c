@@ -1,0 +1,67 @@
+#include<stdio.h>
+int main()
+{
+    char s[101],*p;
+    int i,j,k,l,c;
+    scanf("%s",&s);
+    l=strlen(s);
+    c=0;
+    for(i=0;i<l-4;i++)
+    {
+        p=&s[i];
+        if(*p=='h')
+        {
+            j=i+1;
+            c=c+1;
+            break;
+        }
+    }
+    for(i=j;i<l-3;i++)
+    {
+        p=&s[i];
+        if(*p=='e')
+        {
+            j=i+1;
+            c=c+1;
+            break;
+        }
+    }
+    for(i=j;i<l-2;i++)
+    {
+        p=&s[i];
+        if(*p=='l')
+        {
+            j=i+1;
+            c=c+1;
+            break;
+        }
+    }
+    for(i=j;i<l-1;i++)
+    {
+        p=&s[i];
+        if(*p=='l')
+        {
+            j=i+1;
+            c=c+1;
+            break;
+        }
+    }
+    for(i=j;i<l;i++)
+    {
+        p=&s[i];
+        if(*p=='o')
+        {
+            j=i+1;
+            c=c+1;
+            break;
+        }
+    }
+    if(c==5)
+    {
+        printf("YES\n");
+    }
+    else
+    {
+        printf("NO\n");
+    }
+}
